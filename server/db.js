@@ -11,13 +11,13 @@ Meteor.startup( function () {
       Posts.insert({
         id: 1,
         title: "Datetime Math Is Hard!",
-        date: new Date().toUTCString(),
+        date: new Date(2015, 2, 22).toDateString(),
         content: "ACK! This is example content I will actually write something on this topic very soon hopefully and whatnot.Checking how it handles things like new lines when I do it this way."
       }, function (err, doc) {
         if (err) {
           console.log('error adding doc');
         } else {
-          console.log('new doc created ' + doc._id);
+          console.log('new doc created ' + doc);
         }
       });
     }
