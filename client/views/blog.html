@@ -2,7 +2,10 @@
   <p>where is this disappearing to?</p>
   {{count}}
   {{#each posts}}
-    <p>{{title}}</p>
-    <p>{{content}}</p>
+    <div class='post'>
+      <p class='title'>{{title}}</p>
+      <p class='date'>{{datet t }}</p>
+      <p class='content'>{{content}}</p>
+    </div>
   {{/each}}
 </template>
