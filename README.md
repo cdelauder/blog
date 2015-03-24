@@ -1,0 +1,1 @@
+This will eventually be the next version of my portfolio site. I am in the process of converting it to a blog format so I can share what I have learned as a software engineer with the world. I am also building this site in Meteor as my first real Meteor project. There will be an updated readme when I roll out this new site.
