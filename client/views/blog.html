@@ -1,0 +1,9 @@
+<template name='blog'>
+  {{#each posts}}
+    <div class='post'>
+      <p class='title'>{{title}}</p>
+      <p class='date'>{{date}}</p>
+      <p class='content'>{{{content}}}</p>
+    </div>
+  {{/each}}
+</template>
