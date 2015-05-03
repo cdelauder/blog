@@ -27,11 +27,11 @@ Meteor.startup( function () {
     "<p>Another solution is to place both elements on the same line of html. I can't say I'm a fan of this one. In fact, it saddens me to see such nonsense.</p>";
   var post2 = "<p>The Javascript Date object is a woefully inadequate and there is no help on the horizon. It has a lot of methods, but the few methods to actually manipulate dates in ways which make sense to humans. You end up having to jump through hoops which seem completely rediculous in order to do something as simple as adding a day to date. </p>" +
     "<div>" +
-    "{{#markdown}}" +
-    "```" +
-    "   var today = new Date();" +
-    "   var tomorrow = today.setDay(today.getDay() + 1);" +
-    "```" +
+    "{{#markdown}}\n" +
+    "```\n" +
+    "   var today = new Date();\n" +
+    "   var tomorrow = today.setDay(today.getDay() + 1);\n" +
+    "```\n" +
     "{{/markdown}}" +
     "</div>" +
     "<p>This is how you add a day to a date in Javascript. Doesn't this code look like something you would chide an junior engineer for? This is the sort of nonsense that ends up in your codebase when working with dates in Javascript. This is exactly the sort of non-human readable code that we argue has no business in modern coding. <p>" +
