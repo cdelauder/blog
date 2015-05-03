@@ -24,7 +24,30 @@ Meteor.startup( function () {
     "--><div class='block-2'></div>" +
     "<p>The one I used successfully is to wrap the white space in a comment tag. I created a comment that stretched from the end of one line of html to the beginning of the next. This immediately solved the problem.</p>" +
     "<div class='block-1'></div><div class='block-2'></div>" +
-    "<p>Another solution is to place both elements on the same line of html. I can't say I'm a fan of this one. In fact, it saddens me to see such nonsense.</p>"
+    "<p>Another solution is to place both elements on the same line of html. I can't say I'm a fan of this one. In fact, it saddens me to see such nonsense.</p>";
+  var post2 = "<p>The Javascript Date object is a woefully inadequate and there is no help on the horizon. It has a lot of methods, but the few methods to actually manipulate dates in ways which make sense to humans. You end up having to jump through hoops which seem completely rediculous in order to do something as simple as adding a day to date. </p>" +
+    "<div>" +
+    "{{#markdown}}" +
+    "```" +
+    "   var today = new Date();" +
+    "   var tomorrow = today.setDay(today.getDay() + 1);" +
+    "```" +
+    "{{/markdown}}" +
+    "</div>" +
+    "<p>This is how you add a day to a date in Javascript. Doesn't this code look like something you would chide an junior engineer for? This is the sort of nonsense that ends up in your codebase when working with dates in Javascript. This is exactly the sort of non-human readable code that we argue has no business in modern coding. <p>" +
+    "<p>People avoid working with dates because it's hard, but also because dates come in two forms: incomprehensible integers, and strings you can't manipulate. Therefore I think we should all start getting comfortable monkeypatching the Javascript Date object with the getters and setters they refuse to provide us with. We can make datetime math start to make more sense. </p>" +
+    "<div>" +
+    "{{#markdown}}" +
+    "```" +
+    "   Date.prototype.addDays = function (days) {" +
+    "     this.setDay(this.getDay() + days); " +
+    "   };" +
+    "   var today = new Date();" +
+    "   var tomorrow = today.addDays(1);" +
+    "```" +
+    "{{/markdown}}" +
+    "</div>" +
+    "<p>Now doesn't that look better? </p>";
 
   Posts = new Mongo.Collection('posts');
   Posts.remove({}, function (docs) {
@@ -38,7 +61,7 @@ Meteor.startup( function () {
         id: 2,
         title: "Datetime Math Is Hard!",
         date: new Date(2015, 2, 22).toDateString(),
-        content: "ACK! This is example content I will actually write something on this topic very soon hopefully and whatnot.Checking how it handles things like new lines when I do it this way." 
+        content: post2
       }, function (err, doc) {
         if (err) {
           console.log('error adding doc');
